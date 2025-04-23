@@ -12,7 +12,7 @@ def savejson(json):
 #####################
 
 Head="""
-# BlobeVM Installer
+# CrynalVM Installer
 
 > CrynalVM (Powered by DesktopOnCodespaces)
 
