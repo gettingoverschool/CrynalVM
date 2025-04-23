@@ -14,9 +14,9 @@ def savejson(json):
 Head="""
 # BlobeVM Installer
 
-> BlobeVM (Powered by DesktopOnCodespaces)
+> CrynalVM (Powered by DesktopOnCodespaces)
 
-BlobeVM is a Virtual Machine that...
+CrynalVM is a Virtual Machine that...
 * Runs entirely in a web browser
 * Is unblocked
 * Has Windows app support
@@ -26,7 +26,7 @@ BlobeVM is a Virtual Machine that...
 * Is very fast
 """
 InstallHead="""
-# BlobeVM Installer
+# CrynalVM Installer
 """     
 
 LINES = ["KDE Plasma (Heavy)", "XFCE4 (Lightweight)", "I3 (Very Lightweight)", "GNOME 42 (Very Heavy)", "Cinnamon", "LXQT"]
