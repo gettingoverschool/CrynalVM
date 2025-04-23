@@ -1,22 +1,22 @@
 git clone https://github.com/gettingoverschool/CrynalVM
-cd CrynalVM
+cd BlobeVM
 pip install textual
 sleep 2
 python3 installer.py
-docker build -t Crynalvm . --no-cache
+docker build -t blobevm . --no-cache
 cd ..
 
 sudo apt update
 sudo apt install -y jq
 
 mkdir Save
-cp -r CrynalVM/root/config/* Save
+cp -r BlobeVM/root/config/* Save
 
-json_file="CrynalVM/options.json"
+json_file="BlobeVM/options.json"
 if jq ".enablekvm" "$json_file" | grep -q true; then
-    docker run -d --name=CrynalVM -e PUID=1000 -e PGID=1000 --device=/dev/kvm --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=CrynalVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped Crynalvm
+    docker run -d --name=BlobeVM -e PUID=1000 -e PGID=1000 --device=/dev/kvm --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=BlobeVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped blobevm
 else
-    docker run -d --name=CrynalVM -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=CrynalVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped Crynalvm
+    docker run -d --name=BlobeVM -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=BlobeVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped blobevm
 fi
 clear
-echo "CRYNALVM WAS INSTALLED SUCCESSFULLY! Check Port Tab"
+echo "CrynalVM WAS INSTALLED SUCCESSFULLY! Check Port Tab"
