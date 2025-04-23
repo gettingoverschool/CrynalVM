@@ -1,6 +1,6 @@
-Welcome to BlobeVM!
+Welcome to CrynalVM!
 
-BlobeVM is a Virtual Machine that...
+CrynalVM is a Virtual Machine that...
 * Runs entirely in a web browser
 * Is unblocked
 * Has Windows app support
